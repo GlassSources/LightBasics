@@ -18,19 +18,6 @@ g_PluginInfo =
 				Permission = "lightbasics.about",
 				Handler = about,
 			},
-			["/setweather"] =
-			{
-				HelpString = "This command will set the weather of the world you are currently on.",
-				Permission = "lightbasics.setweather",
-				Handler = weather,
-				ParameterCombinations =
-				{
-					{
-						Params = "weathervalue",
-						Help = "The value will set which weather that will be set in the main command.",
-					},
-				},
-			},
 	},
 	ConsoleCommands = {},
 	Permissions = {
