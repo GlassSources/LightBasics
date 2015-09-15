@@ -53,7 +53,7 @@ function weather(Split, Player)
 	-- main code
 	local playerWorld = Player:GetWorld()
 	local worldName = playerWorld:GetName()
-	if(Split[2] == "downfall")
+	if(Split[2] == "downfall") then
 	playerWorld:ChangeWeather(wRain)
 	Player:SendMessage(cChatColor.Green .. "The weather has been set to RAIN.")
 	return true
