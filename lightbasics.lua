@@ -58,6 +58,7 @@ function weather(Split, Player)
 	local playerWorld = Player:GetWorld()
 	local worldName = playerWorld:GetName()
 	if(Split[2] == "downfall") then
+	g_WorldsWithoutWeatherChange[WorldName] = false
 	playerWorld:ChangeWeather(wRain)
 	Player:SendMessage(cChatColor.Green .. "The weather has been set to RAIN.")
 	return true
@@ -70,6 +71,7 @@ function weather(Split, Player)
 	return true
 	end
 	if (Split[2] == "sunny") then
+	g_WorldsWithoutWeatherChange[WorldName] = false
 	playerWorld:ChangeWeather(wSunny)
 	Player:SendMessage(cChatColor.Green .. "The weather has been set to SUNNY.")
 	return true
