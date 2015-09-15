@@ -50,6 +50,10 @@ function weather(Split, Player)
 		Player:SendMessage(cChatColor.Red .. "Usage: /setweather <weathervalue>")
 		return true
 	end
+	if(#Split < 2) then
+		Player:SendMessage(cChatColor.Red .. "Usage: /setweather <weathervalue>")
+		return true
+	end
 	-- main code
 	local playerWorld = Player:GetWorld()
 	local worldName = playerWorld:GetName()
