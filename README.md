@@ -6,7 +6,8 @@ This lua implementation focuses on being lightweight and adding features that wi
 
 # Build
 We are using a custom build development system instead of the default release system.
-Please view our Wiki to see on how to build development versions.
+Please view our Wiki to see on how to build release versions quicker then the default release system.
+Otherwise, please get the stable builds from the default release system.
 
 ## Requirements
 We advice you to have at least these server specifications.
