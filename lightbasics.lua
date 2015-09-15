@@ -58,14 +58,14 @@ function weather(Split, Player)
 	Player:SendMessage(cChatColor.Green .. "The weather has been set to RAIN.")
 	return true
 	end
-	if(Split[2] == "stopweather")
+	if (Split[2] == "stopweather") then
 	-- code segment from nilspace, world utillities
 	g_WorldsWithoutWeatherChange[WorldName] = true
 	-- end segment
 	Player:SendMessage(cChatColor.Green .. "The weather has been set to END_RAIN.")
 	return true
 	end
-	if(Split[2] == "sunny")
+	if (Split[2] == "sunny") then
 	playerWorld:ChangeWeather(wSunny)
 	Player:SendMessage(cChatColor.Green .. "The weather has been set to SUNNY.")
 	return true
