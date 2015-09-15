@@ -17,6 +17,7 @@ function Initialize(Plugin)
 	
 	-- Register Cuberite Items
 	cPluginManager.BindCommand("/aboutbasics", "lightbasics.about", about, " - This command will return on what version of LightBasics is currently on.")
+	cPluginManager.BindCommand("/setweather", "lightbasics.setweather", weather, " ~ This command will set the weather.")
 	-- Init LOGGING
 	sendLog("LightBasics has now initalized!")
 	
@@ -34,11 +35,40 @@ end
 function about(Split, Player)
 	-- check parameters
 	if (#Split > 1) then
-		Player:SendMessage("Usage: /aboutbasics")
+		Player:SendMessage(cChatColor.Red .. "Usage: /aboutbasics")
 		return true
 	end
 	-- main code
-	Player:SendMessage("LightBasics is at version: " .. PLUGIN:GetVersion())
+	Player:SendMessage(cChatColor.Green .. "LightBasics is at version: " .. PLUGIN:GetVersion())
 	-- send boolean so cuberite knows that its a command success
+	return true
+end
+
+function weather(Split, Player)
+	-- check parameters
+	if (#Split > 2) then
+		Player:SendMessage(cChatColor.Red .. "Usage: /setweather <weathervalue>")
+		return true
+	end
+	-- main code
+	local playerWorld = Player:GetWorld()
+	local worldName = playerWorld:GetName()
+	if(Split[2] == "downfall")
+	playerWorld:ChangeWeather(wRain)
+	Player:SendMessage(cChatColor.Green .. "The weather has been set to RAIN.")
+	return true
+	end
+	if(Split[2] == "stopweather")
+	-- code segment from nilspace, world utillities
+	g_WorldsWithoutWeatherChange[WorldName] = true
+	-- end segment
+	Player:SendMessage(cChatColor.Green .. "The weather has been set to END_RAIN.")
+	return true
+	end
+	if(Split[2] == "sunny")
+	playerWorld:ChangeWeather(wSunny)
+	Player:SendMessage(cChatColor.Green .. "The weather has been set to SUNNY.")
+	return true
+	end
 	return true
 end

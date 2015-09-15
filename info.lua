@@ -18,7 +18,29 @@ g_PluginInfo =
 				Permission = "lightbasics.about",
 				Handler = about,
 			},
+			["/setweather"] =
+			{
+				HelpString = "This command will set the weather of the world you are currently on.",
+				Permission = "lightbasics.setweather",
+				Handler = weather,
+				ParameterCombinations =
+				{
+					{
+						Params = "weathervalue",
+						Help = "The value will set which weather that will be set in the main command.",
+					},
+				},
+			},
 	},
 	ConsoleCommands = {},
-	Permissions = {},
+	Permissions = {
+			["lightbasics.about"] =
+				{
+					Description = "Allows users to check what version of LightBasic the server is running.",
+				},
+			["lightbasics.setweather"] =
+				{
+					Description = "Allows users to set the weather of their current world they are in.",
+				},	
+	},
 }
