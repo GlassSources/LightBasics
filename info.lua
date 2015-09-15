@@ -18,6 +18,23 @@ g_PluginInfo =
 				Permission = "lightbasics.about",
 				Handler = about,
 			},
+			["/setwalkspeed"] =
+			{
+				HelpString = "This will set the user's default walkspeed.",
+				Permission = "lightbasics.setspeed",
+				Handler = walkspeed,
+				ParameterCombinations =
+			{
+				{
+					Params = "speed",
+					Help = "The int value of what the player wants the speed to be.",
+				},
+				{
+					Params = "player",
+					Help = "The chosen victim of the walkspeed command.",
+				},
+			},
+			},
 	},
 	ConsoleCommands = {},
 	Permissions = {
@@ -25,9 +42,9 @@ g_PluginInfo =
 				{
 					Description = "Allows users to check what version of LightBasic the server is running.",
 				},
-			["lightbasics.setweather"] =
+			["lightbasics.setspeed"] =
 				{
-					Description = "Allows users to set the weather of their current world they are in.",
+					Description = "Allows users to set their default speeds.",
 				},	
 	},
 }
